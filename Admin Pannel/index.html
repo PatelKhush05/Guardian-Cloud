@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GuardianCloud | AI Defense Console</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body data-theme="dark">
+
+<div class="cloud-pulse-bar">
+<div class="container-fluid d-flex justify-content-between align-items-center">
+<span class="pulse-text"><span class="dot green"></span> CLOUD NETWORK: OPTIMAL</span>
+<span class="pulse-text">SESSION: 2026_ADMIN_SECURE</span>
+<span class="pulse-text">GLOBAL UPTIME: 99.99%</span>
+</div>
+</div>
+
+<nav class="nav-custom">
+<div class="container-fluid d-flex justify-content-between align-items-center">
+
+<div class="d-flex align-items-center">
+
+<h4 class="logo-text me-5">
+GUARDIAN<span class="text-accent">CLOUD</span>
+</h4>
+
+<ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
+
+<li class="nav-item">
+<button class="nav-link active"
+data-bs-toggle="pill"
+data-bs-target="#pills-dashboard">
+CONSOLE
+</button>
+</li>
+
+<li class="nav-item">
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#pills-logs">
+LIVE MITIGATION
+</button>
+</li>
+
+</ul>
+</div>
+
+<button class="btn-theme" id="theme-toggle">
+🌓 THEME ENGINE
+</button>
+
+</div>
+</nav>
+
+
+<div class="container-fluid p-4">
+
+<div class="tab-content">
+
+<!-- ===============================
+DASHBOARD
+================================ -->
+
+<div class="tab-pane fade show active" id="pills-dashboard">
+
+<div class="row g-4 mb-4">
+
+<div class="col-md-3">
+<div class="guardian-card stat-card">
+<small class="label">Total Scans</small>
+<div class="value" id="scan-count">0</div>
+<div class="trend up">LIVE</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="guardian-card stat-card danger-glow">
+<small class="label">Critical Blocks</small>
+<div class="value text-danger" id="block-count">0</div>
+<div class="trend">REAL-TIME</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="guardian-card stat-card">
+<small class="label">Cloud Latency</small>
+<div class="value text-accent" id="latency-value">0ms</div>
+<div class="trend text-success">LIVE</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="guardian-card stat-card">
+<small class="label">System Health</small>
+<div class="value text-success" id="health-value">100%</div>
+<div class="trend">STABLE</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="row g-4">
+
+<div class="col-lg-8">
+
+<div class="guardian-card h-100">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+<h6 class="card-title">AI THREAT CLASSIFICATION</h6>
+<span class="badge bg-dark border border-secondary small" style="font-size:0.6rem">
+POLLING LIVE...
+</span>
+</div>
+
+
+<div class="analysis-row mt-4">
+
+<div class="d-flex justify-content-between small mb-2">
+<span>PHISHING ATTEMPTS</span>
+<span class="fw-bold text-danger" id="phish-percent">0%</span>
+</div>
+
+<div class="progress-container">
+<div id="phish-bar" class="progress-bar-glow bg-danger" style="width:0%"></div>
+</div>
+
+</div>
+
+
+<div class="analysis-row mt-4">
+
+<div class="d-flex justify-content-between small mb-2">
+<span>COMMERCIAL SPAM</span>
+<span class="fw-bold text-warning" id="spam-percent">0%</span>
+</div>
+
+<div class="progress-container">
+<div id="spam-bar" class="progress-bar-glow bg-warning" style="width:0%"></div>
+</div>
+
+</div>
+
+
+<div class="analysis-row mt-4">
+
+<div class="d-flex justify-content-between small mb-2">
+<span>TOXIC CONTENT</span>
+<span class="fw-bold text-info" id="toxic-percent">0%</span>
+</div>
+
+<div class="progress-container">
+<div id="toxic-bar" class="progress-bar-glow bg-info" style="width:0%"></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="col-lg-4">
+
+<div class="guardian-card node-section">
+
+<h6 class="card-title mb-3">
+INFRASTRUCTURE NODES
+</h6>
+
+<div class="node-item mb-3">
+
+<div class="d-flex justify-content-between">
+<span class="node-name">AWS-NORTH-VIRGINIA</span>
+<span class="badge bg-success-glow pulse-online">ONLINE</span>
+</div>
+
+<div class="node-load-bar mt-2">
+<div class="load-fill" style="width:35%"></div>
+</div>
+
+</div>
+
+<div class="node-item">
+
+<div class="d-flex justify-content-between">
+<span class="node-name">AZURE-CENTRAL-INDIA</span>
+<span class="badge bg-success-glow pulse-online">ONLINE</span>
+</div>
+
+<div class="node-load-bar mt-2">
+<div class="load-fill" style="width:20%"></div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="guardian-card mt-4">
+
+<h6 class="card-title mb-3">
+DYNAMIC BLACKLIST
+</h6>
+
+<div class="input-group mb-3">
+
+<input type="text"
+id="bl-input"
+class="form-control"
+placeholder="Add keyword...">
+
+<button class="btn btn-danger-glow"
+id="bl-add-btn">
+BLOCK
+</button>
+
+</div>
+
+<div id="bl-list" class="blacklist-area"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ===============================
+LIVE LOGS
+================================ -->
+
+<div class="tab-pane fade" id="pills-logs">
+
+<div class="guardian-card p-0 overflow-hidden shadow-2xl border-0">
+
+<div class="glass-header d-flex justify-content-between align-items-center p-3">
+<h5 class="mb-0 fw-bold">TRAFFIC INSPECTION ENGINE</h5>
+<span class="badge badge-outline">LIVE DECRYPTION ACTIVE</span>
+</div>
+
+<div class="table-responsive">
+
+<table class="table table-hover align-middle mb-0 cloud-table">
+
+<thead>
+<tr>
+<th>TIME</th>
+<th>WEBSITE</th>
+<th>IDENTITY</th>
+<th>PAYLOAD</th>
+<th>INTENT</th>
+<th class="text-center">ADMIN ACTIONS</th>
+</tr>
+</thead>
+
+<tbody id="log-body">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
